@@ -17,8 +17,9 @@ RUN apt-get update && \
     wget -q https://repo.anaconda.com/archive/${ANACONDA_INSTALLER} && \
     md5sum -c ${ANACONDA_INSTALLER}.md5 && \
     chmod +x ${ANACONDA_INSTALLER} && \
-    ./${ANACONDA_INSTALLER} -b -p /opt/anaconda3
-
-ENV PATH="/opt/anaconda3/bin:${PATH}"
+    ./${ANACONDA_INSTALLER} -b -p /opt/anaconda3 && \
+    ln -s /opt/anaconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    echo "conda activate" >> /root/.bashrc && \
+    rm -fr /tmp/${ANACONDA_INSTALLER} /tmp/${ANACONDA_INSTALLER}.md5
 
 WORKDIR /root
