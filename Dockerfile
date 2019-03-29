@@ -19,6 +19,7 @@ RUN apt-get update && \
     chmod +x ${ANACONDA_INSTALLER} && \
     ./${ANACONDA_INSTALLER} -b -p /opt/anaconda3 && \
     ln -s /opt/anaconda3/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
+    echo ". /opt/anaconda3/etc/profile.d/conda.sh" >> /root/.bashrc && \
     echo "conda activate" >> /root/.bashrc && \
     rm -fr /tmp/${ANACONDA_INSTALLER} /tmp/${ANACONDA_INSTALLER}.md5
 
