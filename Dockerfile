@@ -1,11 +1,11 @@
-FROM nvidia/cuda:10.0-devel-ubuntu18.04
+FROM nvidia/cuda:10.1-devel-ubuntu18.04
 LABEL version "0.1"
 LABEL description "Anaconda3 inside a CUDA docker."
 
-ENV ANACONDA_VERSION Anaconda3-2018.12
+ENV ANACONDA_VERSION Anaconda3-2019.03
 
 ENV ANACONDA_INSTALLER ${ANACONDA_VERSION}-Linux-x86_64.sh
-ENV ANACONDA_MD5_HASH  c9af603d89656bc89680889ef1f92623
+ENV ANACONDA_MD5_HASH  43caea3d726779843f130a7fb2d380a2
 
 ENV APT_PACKAGES wget curl apt-transport-https ca-certificates
 
